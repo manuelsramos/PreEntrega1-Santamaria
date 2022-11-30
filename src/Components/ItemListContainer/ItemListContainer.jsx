@@ -1,8 +1,11 @@
 import React from 'react'
 import './ItemListContainer.css'
 
-export const ItemListContainer = (Greetings) => {
+export const ItemListContainer = ({ greetings }) => {
+  console.log(greetings)
   return (
-    <div>ItemListContainer</div>
+    <div>
+      <h3 className='text-primary'>{greetings}</h3>
+    </div>
   )
 }
