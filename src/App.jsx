@@ -1,5 +1,4 @@
-
-//import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ItemListContainer } from './Components/ItemListContainer/ItemListContainer'
 import { NavComponent } from './Components/NavBar/NavBar'
 
@@ -9,11 +8,15 @@ function App() {
 
 
   return (
-    <div>
+    <BrowserRouter>
       <NavComponent />
-      <ItemListContainer greetings={greetingsContainer}
-      />
-    </div>
+      <Routes>
+        <Route path='/' element={<ItemListContainer greetings={greetingsContainer} />} />
+        {/* <Route path='/detail' element={ />} /> */}
+        {/* <Route path='/' element={<ItemListContainer greetings={greetingsContainer} />} /> */}
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 
