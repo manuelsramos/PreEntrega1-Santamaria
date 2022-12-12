@@ -6,15 +6,14 @@ import { NavComponent } from './Components/NavBar/NavBar'
 const greetingsContainer = 'Welcome to Home Container'
 
 function App() {
-  
+
 
   return (
-  <div>
-
-    <NavComponent />
-    <ItemListContainer greetings={greetingsContainer} />
- 
-  </div>    
+    <div>
+      <NavComponent />
+      <ItemListContainer greetings={greetingsContainer}
+      />
+    </div>
   )
 }
 
