@@ -5,20 +5,33 @@ import './ItemListContainer.css'
 import { ItemCount } from '../../Components/ItemCount/ItemCount';
 import { gFetch } from '../../helpers/gFetch';
 import ItemList from '../../Components/ItemList/ItemList';
-
+import { useParams } from 'react-router-dom';
 
 
 export const ItemListContainer = ({ greetings }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const { categoryId } = useParams()
+
 
   useEffect(() => {
-    gFetch() //gFetch
-      .then(result => setProducts(result))
-      .finally(() => setLoading(false))
-  }
-    , [])
 
+    if (categoryId) {
+      gFetch() //gFetch
+        .then(result => setProducts(result.filter(product => product.category === categoryId)))
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
+    } else {
+      gFetch() //sgFetch
+        .then(result => setProducts(result))
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
+
+    }
+  }
+    , [categoryId])
+
+  console.log(categoryId)
 
   return (
     <>
