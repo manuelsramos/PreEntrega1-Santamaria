@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import React from 'react'
 import './ItemListContainer.css'
-import { ItemCount } from '../ItemCount/ItemCount';
+import { ItemCount } from '../../Components/ItemCount/ItemCount';
 import { gFetch } from '../../helpers/gFetch';
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../../Components/ItemList/ItemList';
 
 
 
