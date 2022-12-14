@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import React from 'react'
 import './ItemListContainer.css'
-import { ItemCount } from '../../Components/ItemCount/ItemCount';
 import { gFetch } from '../../helpers/gFetch';
 import ItemList from '../../Components/ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { Container, Row } from 'react-bootstrap';
+
 
 
 export const ItemListContainer = ({ greetings }) => {
@@ -35,10 +35,15 @@ export const ItemListContainer = ({ greetings }) => {
 
   return (
     <>
-      <h3 className='text-primary'>{greetings}</h3>
-      {loading ? <h2>Loading pets ... </h2> : < ItemList products={products} />}
-
-      < ItemCount />
+      <h3 className='text-dark'>{greetings}</h3>
+      {loading
+        ? <h2>Ready to meet your next partner? ... </h2>
+        : <Container>
+          <Row>
+            < ItemList products={products} />
+          </Row>
+        </Container>
+      }
     </>
   )
 }

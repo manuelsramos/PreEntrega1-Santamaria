@@ -1,0 +1,16 @@
+.card-img {
+    background: #F1F1F1;
+}
+
+
+.card-title {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-category {
+    text-decoration: none;
+    color: black;
+}

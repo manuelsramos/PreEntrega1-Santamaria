@@ -26,14 +26,14 @@ export const ItemCount = () => {
     }
     return (
         <>
-            <center>
+            <center className="mt-5 border border-1 border-secondary p-3 rounded">
 
-                <Button onClick={handleCountMenos} variant="info">-</Button>
-                {counter}
-                <Button onClick={handleCount} variant="info">+</Button>
+                <Button onClick={handleCountMenos} variant="secondary">-</Button>
+                <label>{counter}</label>
+                <Button onClick={handleCount} variant="secondary">+</Button>
                 <br></br>
                 <br></br>
-                <Button onClick={handleBool} variant="light"><h3>Add to the basket</h3></Button>
+                <Button onClick={handleBool} variant="dark"><h3>Add to the basket</h3></Button>
             </center>
         </>
     )

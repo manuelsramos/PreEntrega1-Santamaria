@@ -1,28 +1,34 @@
-import { Link, NavLink, } from 'react-router-dom'
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from 'react-router-dom'
+import { Container, Nav, Navbar } from 'react-bootstrap';
+
 import { CartWidget } from '../CartWidget/CartWidget';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
+import './NavBar.css';
 
 export const NavComponent = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <NavLink className={({ isActive }) => isActive ? '' : ''} to='' >PetBuddy</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'navlink-brand' : 'navlink-ibrand'} to=''>
+          PetPartner
+        </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink to="/category/dogs">Dogs</NavLink>
-            <NavLink to="/category/cats">Cats</NavLink>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav className="container">
+            <div className='navlink-container'>
+              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/dogs">Dogs</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/cats">Cats</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/contact">Contact</NavLink>
+            </div>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
-              <Row> <Col>0</Col> <Col><CartWidget /></Col> </Row>
-            </Nav.Link>
+            <NavLink className="item-count">
+              0
+            </NavLink>
+            <NavLink className="cart-widget">
+              <CartWidget />
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
