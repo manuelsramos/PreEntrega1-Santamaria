@@ -1,9 +1,23 @@
 import React from 'react'
+import { useState } from 'react';
 import { ItemCount } from '../../Components/ItemCount/ItemCount';
+import { useCartContext } from '../../Context/Cartcontext';
+import { InputForm } from '../InputForm/InputForm';
+import InterCart from '../InterCart/InterCart';
 
 const ItemDetail = ({ product }) => {
 
-    console.log(product)
+    const [interButton, setInterButton] = useState(true)
+    const { addCart, cartList } = useCartContext();
+
+
+    const onAdd = (cantidad) => {
+        alert(`Cantidad de pets: ${cantidad}`)
+        addCart({ ...product, cantidad })
+        setInterButton(false);
+    };
+
+    console.log(cartList)
     return (
         <div className="row">
             <h2>{product.name}</h2>
@@ -11,7 +25,15 @@ const ItemDetail = ({ product }) => {
             <h4>{product.description}</h4>
 
             <h5>Love doesn't buy with money. My price is: {product.price}</h5>
-            < ItemCount />
+            {interButton
+                ?
+                < ItemCount stock={5}
+                    initial={1}
+                    onAdd={onAdd} />
+                : <InterCart />
+            }
+
+            <InputForm />
         </div>
     )
 }

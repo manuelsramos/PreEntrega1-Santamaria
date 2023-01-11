@@ -4,36 +4,33 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export const ItemCount = () => {
+export const ItemCount = ({ stock = 5, initial = 1, onAdd }) => {
     const [products, setProducts] = useState([])
-    const [counter, setcounter] = useState(0)
-    const [booleano, setBooleano] = useState(true)
+    const [counter, setcounter] = useState(initial)
 
 
     const handleCountMenos = () => {
-        setcounter(counter - 1)
+        if (counter > 1) { setcounter(counter - 1) }
     }
 
     const handleCount = () => {
-        setcounter(counter + 1)
-        /* count++
-        console.log(count) */
+        if (counter < stock) {
+            setcounter(counter + 1)
+        }
     }
 
-    const handleBool = () => {
-        setBooleano(!booleano)
-        console.log(handleBool)
-    }
+    const handleOnAdd = () => onAdd(counter);
+
     return (
         <>
             <center className="mt-5 border border-1 border-secondary p-3 rounded">
 
                 <Button onClick={handleCountMenos} variant="secondary">-</Button>
-                <label>{counter}</label>
+                <label><h3>{counter}</h3></label>
                 <Button onClick={handleCount} variant="secondary">+</Button>
                 <br></br>
                 <br></br>
-                <Button onClick={handleBool} variant="dark"><h3>Add to the basket</h3></Button>
+                <Button onClick={handleOnAdd} variant="dark"><h3>Add to the basket</h3></Button>
             </center>
         </>
     )

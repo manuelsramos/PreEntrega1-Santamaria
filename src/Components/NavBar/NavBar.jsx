@@ -22,13 +22,11 @@ export const NavComponent = () => {
               <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/contact">Contact</NavLink>
             </div>
           </Nav>
-          <Nav>
+          <Nav className='container'>
             <NavLink className="item-count">
-              0
+
             </NavLink>
-            <NavLink className="cart-widget">
-              <CartWidget />
-            </NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-active'} to="/cart"><CartWidget /></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

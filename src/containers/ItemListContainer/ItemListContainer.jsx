@@ -5,6 +5,7 @@ import { gFetch } from '../../helpers/gFetch';
 import ItemList from '../../Components/ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
+import { Loader } from '../../Components/Loader/Loader';
 
 
 
@@ -37,7 +38,7 @@ export const ItemListContainer = ({ greetings }) => {
     <>
       <h3 className='text-dark'>{greetings}</h3>
       {loading
-        ? <h2>Ready to meet your next partner? ... </h2>
+        ? <Loader />
         : <Container>
           <Row>
             < ItemList products={products} />
