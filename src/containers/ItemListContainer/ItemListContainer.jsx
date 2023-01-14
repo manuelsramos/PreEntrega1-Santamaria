@@ -21,8 +21,8 @@ export const ItemListContainer = ({ greetings }) => {
     if (categoryId) {
       const datab = getFirestore()
       const queryCollection = collection(datab, 'productos',)
-
       const queryFilter = query(queryCollection, where('category', '==', categoryId))
+
       getDocs(queryFilter)
         .then(resp => setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() })))) /* En este caso, dejamos las llaves y envolvemos en parentesis para que mantenga el retorno implicito. Por mas que trabajemos con un array */
         .catch(err => console.log(err))
@@ -40,18 +40,6 @@ export const ItemListContainer = ({ greetings }) => {
     }
   }
     , [categoryId])
-
-
-  /* Traer uno */
-
-
-
-  /* Como traer todos */
-  /*   useEffect(() => {
-
-
-}, [])
-console.log(product) */
 
 
   return (

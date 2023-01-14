@@ -7,14 +7,12 @@ import { useState } from 'react';
 
 const InputForm = () => {
 
-    const { cartList, deleteCart, finalPrice, deleteItem } = useCartContext()
+    const { cartList } = useCartContext()
 
     const [dataForm, setDataForm] = useState({
         name: "",
         lastName: "",
-        phone: "",
-        email: "",
-        confirmEmail: ""
+        phone: ""
     })
 
 
@@ -22,65 +20,91 @@ const InputForm = () => {
     const [email2, setEmail2] = useState('');
     const [error, setError] = useState('');
 
+
     const handleChange = (e) => {
         setDataForm({
             ...dataForm,
-            [e.target.name]: e.target.value
-        })
-    }
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleEmail1Change = (e) => {
+        setEmail1(e.target.value);
+        setDataForm({ ...dataForm, email1: e.target.value });
+    };
+
+    const handleEmail2Change = (e) => {
+        setEmail2(e.target.value);
+        setDataForm({ ...dataForm, email2: e.target.value });
+    };
 
 
     const createOrder = (evt) => {
-        evt.preventDefault()
+        evt.preventDefault();
 
-        const order = {}
+        if (email1 !== email2) {
+            setError('Emails do not match');
+            return;
+        }
+        setError('');
 
-        order.buyer = dataForm
+        const order = {};
 
-        order.items = cartList.map(({ name, id, price }) => ({ name, id, price }))
+        order.buyer = dataForm;
 
-        const datab = getFirestore()
-        const queryOrder = collection(datab, 'orders')
+        order.items = cartList.map(({ name, id, price }) => ({ name, id, price }));
+
+        const datab = getFirestore();
+        const queryOrder = collection(datab, 'orders');
         addDoc(queryOrder, order)
-            .then(resp => console.log(resp))
-    }
+            .then(resp => console.log(resp));
+    };
 
 
 
     return (
         <Form onSubmit={createOrder}>
-            <Form.Group className="mb-3" controlId="formPeople">
+            <Form.Group className='mb-3' controlId='formPeople'>
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" name='name' value={dataForm.name}
+                <Form.Control
+                    type='text'
+                    name='name'
+                    value={dataForm.name}
                     onChange={handleChange}
-                    placeholder="Enter your name" />
+                    placeholder='Enter your name'
+                />
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" name='lastName' value={dataForm.lastName}
+                <Form.Control
+                    type='text'
+                    name='lastName'
+                    value={dataForm.lastName}
                     onChange={handleChange}
-                    placeholder="Enter your Last Name" />
+                    placeholder='Enter your Last Name'
+                />
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="number" name='phone' value={dataForm.phone}
+                <Form.Control
+                    type='number'
+                    name='phone'
+                    value={dataForm.phone}
                     onChange={handleChange}
-                    placeholder="Enter your phone number" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="text" name='email'
-                    placeholder="Email"
+                    placeholder='Enter your phone number'
+                />
+                <Form.Control
+                    type='text'
+                    name='email'
+                    placeholder='Email'
                     value={email1}
-                    onChange={(e) => setEmail1(e.target.value)}
+                    onChange={handleEmail1Change}
                     required
-
                 />
-                <Form.Label> Confirm Email</Form.Label>
-                <Form.Control type="text" name='confirmEmail'
-                    placeholder="Confirm your email"
+                <Form.Control
+                    type='text'
+                    name='confirmEmail'
+                    placeholder='Confirm your email'
                     value={email2}
-                    onChange={(e) => setEmail2(e.target.value)}
+                    onChange={handleEmail2Change}
                     required
                 />
-
             </Form.Group>
 
             <center>
