@@ -89,6 +89,7 @@ const InputForm = () => {
                     onChange={handleChange}
                     placeholder='Enter your phone number'
                 />
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                     type='text'
                     name='email'
