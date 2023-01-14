@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react';
 import { ItemCount } from '../../Components/ItemCount/ItemCount';
 import { useCartContext } from '../../Context/Cartcontext';
-import { InputForm } from '../InputForm/InputForm';
 import InterCart from '../InterCart/InterCart';
 
 const ItemDetail = ({ product }) => {
@@ -12,7 +11,6 @@ const ItemDetail = ({ product }) => {
 
 
     const onAdd = (cantidad) => {
-        alert(`Cantidad de pets: ${cantidad}`)
         addCart({ ...product, cantidad })
         setInterButton(false);
     };
@@ -24,7 +22,7 @@ const ItemDetail = ({ product }) => {
             <img src={product.photo} className='w-50' alt="Product image" />
             <h4>{product.description}</h4>
 
-            <h5>Love doesn't buy with money. My price is: {product.price}</h5>
+            <h5>Just in time! My price is: {product.price}</h5>
             {interButton
                 ?
                 < ItemCount stock={5}
@@ -33,7 +31,6 @@ const ItemDetail = ({ product }) => {
                 : <InterCart />
             }
 
-            <InputForm />
         </div>
     )
 }

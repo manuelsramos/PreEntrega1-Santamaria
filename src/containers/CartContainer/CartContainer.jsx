@@ -1,5 +1,9 @@
 import React from 'react'
 import { useCartContext } from '../../Context/Cartcontext'
+import InputForm from '../../Components/InputForm/InputForm'
+
+
+
 
 
 const CartContainer = () => {
@@ -21,8 +25,13 @@ const CartContainer = () => {
                 className="btn btn-dark"
                 onClick={deleteCart}
             >Delete Cart</button>
+
+            <InputForm />
+
         </div>
     )
+
 }
 
 export default CartContainer
+

@@ -9,16 +9,16 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
 
-    const addCart = (product) => {
+    const addCart = (item) => {
 
-        const notDuplicate = cartList.findIndex(product => product.id === product.id)
+        const notDuplicate = cartList.findIndex(product => product.id === item.id)
         if (notDuplicate === -1) {
             setCartList([
                 ...cartList,
-                product
+                item
             ])
         } else {
-            cartList[notDuplicate].cantidad += product.cantidad
+            cartList[notDuplicate].cantidad += item.cantidad
 
             setCartList([...cartList])
         }

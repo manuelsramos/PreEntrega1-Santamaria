@@ -1,10 +1,11 @@
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../Components/ItemDetail/ItemDetail'
 import { Loader } from '../../Components/Loader/Loader'
-import { gFetch } from '../../helpers/gFetch'
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
@@ -12,8 +13,12 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        gFetch(productId)
-            .then(resp => setProduct(resp))
+        const datab = getFirestore()
+        const queryDoc = doc(datab, 'productos', productId)
+
+        getDoc(queryDoc)
+            .then(resp => setProduct({ id: resp.id, ...resp.data() }))
+            .catch(err => console.log(err))
             .finally(() => setLoading(false))
     }, [])
 

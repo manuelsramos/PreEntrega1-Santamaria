@@ -11,14 +11,14 @@ export const NavComponent = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <NavLink className={({ isActive }) => isActive ? 'navlink-brand' : 'navlink-ibrand'} to=''>
-          PetPartner
+          Watched
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="container">
             <div className='navlink-container'>
-              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/dogs">Dogs</NavLink>
-              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/cats">Cats</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/man">Man</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/woman">Woman</NavLink>
               <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/contact">Contact</NavLink>
             </div>
           </Nav>

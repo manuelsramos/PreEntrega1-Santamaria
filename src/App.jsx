@@ -5,7 +5,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 import { CartContextProvider } from './Context/Cartcontext'
 import CartContainer from './containers/CartContainer/CartContainer'
 
-const greetingsContainer = 'Welcome to our shelter'
+const greetingsContainer = 'Welcome, just in time!'
 
 function App() {
 

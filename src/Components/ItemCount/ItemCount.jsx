@@ -30,7 +30,7 @@ export const ItemCount = ({ stock = 5, initial = 1, onAdd }) => {
                 <Button onClick={handleCount} variant="secondary">+</Button>
                 <br></br>
                 <br></br>
-                <Button onClick={handleOnAdd} variant="dark"><h3>Add to the basket</h3></Button>
+                <Button onClick={handleOnAdd} variant="dark"><h3>Add to the Cart</h3></Button>
             </center>
         </>
     )
