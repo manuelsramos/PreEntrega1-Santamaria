@@ -4,6 +4,7 @@ import { NavComponent } from './Components/NavBar/NavBar'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import { CartContextProvider } from './Context/Cartcontext'
 import CartContainer from './containers/CartContainer/CartContainer'
+import { NoIdComponent } from './Components/NoIdComponent/NoIdComponent'
 
 const greetingsContainer = 'Welcome, just in time!'
 
@@ -21,7 +22,11 @@ function App() {
           <Route path='/detail/:productId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
 
-          <Route path='*' element={<Navigate to='/' />} />
+          <Route path='*' element={<NoIdComponent />} />
+          {/* <Route path='*' element={<Navigate to='/' />} /> */}
+
+
+
         </Routes>
       </BrowserRouter>
     </CartContextProvider>
