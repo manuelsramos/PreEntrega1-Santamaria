@@ -18,12 +18,15 @@ const InputForm = () => {
     })
 
 
+    const [email1, setEmail1] = useState('');
+    const [email2, setEmail2] = useState('');
+    const [error, setError] = useState('');
+
     const handleChange = (e) => {
         setDataForm({
             ...dataForm,
             [e.target.name]: e.target.value
-        }
-        )
+        })
     }
 
 
@@ -49,22 +52,35 @@ const InputForm = () => {
             <Form.Group className="mb-3" controlId="formPeople">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" name='name' value={dataForm.name}
-                    onChange={handleChange} placeholder="Enter your name" />
+                    onChange={handleChange}
+                    placeholder="Enter your name" />
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control type="text" name='lastName' value={dataForm.lastName}
-                    onChange={handleChange} placeholder="Enter your Last Name" />
+                    onChange={handleChange}
+                    placeholder="Enter your Last Name" />
                 <Form.Label>Phone Number</Form.Label>
                 <Form.Control type="number" name='phone' value={dataForm.phone}
-                    onChange={handleChange} placeholder="Enter your phone number" />
+                    onChange={handleChange}
+                    placeholder="Enter your phone number" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="text" name='email' value={dataForm.email}
-                    onChange={handleChange} placeholder="Email" />
+                <Form.Control type="text" name='email'
+                    placeholder="Email"
+                    value={email1}
+                    onChange={(e) => setEmail1(e.target.value)}
+                    required
+
+                />
                 <Form.Label> Confirm Email</Form.Label>
-                <Form.Control type="text" name='confirmEmail' value={dataForm.confirmEmail}
-                    placeholder="Confirm your email" />
+                <Form.Control type="text" name='confirmEmail'
+                    placeholder="Confirm your email"
+                    value={email2}
+                    onChange={(e) => setEmail2(e.target.value)}
+                    required
+                />
+
             </Form.Group>
 
             <center>
