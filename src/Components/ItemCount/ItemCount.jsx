@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import './ItemCount.css'
 
 
 export const ItemCount = ({ stock = 5, initial = 1, onAdd }) => {
@@ -25,12 +24,12 @@ export const ItemCount = ({ stock = 5, initial = 1, onAdd }) => {
         <>
             <center className="mt-5 border border-1 border-secondary p-3 rounded">
 
-                <Button onClick={handleCountMenos} variant="secondary">-</Button>
-                <label><h3>{counter}</h3></label>
+                <Button className='counterButton' onClick={handleCountMenos} variant="secondary">-</Button>
+                <label><h3 className='counterNumber'>{counter}</h3></label>
                 <Button onClick={handleCount} variant="secondary">+</Button>
                 <br></br>
                 <br></br>
-                <Button onClick={handleOnAdd} variant="dark"><h3>Add to the Cart</h3></Button>
+                <Button className='counterButton' onClick={handleOnAdd} variant="dark"><h3>Add to the Cart</h3></Button>
             </center>
         </>
     )

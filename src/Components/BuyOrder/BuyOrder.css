@@ -1,0 +1,9 @@
+.buyorderdiv {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buyorderdiv .buyicon {
+    font-size: 200px;
+}

@@ -1,0 +1,17 @@
+.divdetail {
+    border: 20px red;
+}
+
+.divItem {
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px
+}
+
+.divDetail .divItem .productTitle {
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+
+.divDetail .divItem .itemInfo {}

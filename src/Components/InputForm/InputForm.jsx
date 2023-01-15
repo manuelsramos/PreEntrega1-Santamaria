@@ -1,21 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { useCartContext } from '../../Context/Cartcontext'
-import { useState } from 'react';
 
-const InputForm = () => {
-
-    const { cartList } = useCartContext()
+const InputForm = ({ setOrderId }) => {
+    const { cartList } = useCartContext();
 
     const [dataForm, setDataForm] = useState({
         name: "",
         lastName: "",
         phone: ""
-    })
-
-
+    });
     const [email1, setEmail1] = useState('');
     const [email2, setEmail2] = useState('');
     const [error, setError] = useState('');
@@ -57,63 +53,64 @@ const InputForm = () => {
         const datab = getFirestore();
         const queryOrder = collection(datab, 'orders');
         addDoc(queryOrder, order)
-            .then(resp => console.log(resp));
+            .then(({ id }) => { setOrderId(id) });
     };
 
-
-
     return (
-        <Form onSubmit={createOrder}>
-            <Form.Group className='mb-3' controlId='formPeople'>
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                    type='text'
-                    name='name'
-                    value={dataForm.name}
-                    onChange={handleChange}
-                    placeholder='Enter your name'
-                />
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control
-                    type='text'
-                    name='lastName'
-                    value={dataForm.lastName}
-                    onChange={handleChange}
-                    placeholder='Enter your Last Name'
-                />
-                <Form.Label>Phone Number</Form.Label>
-                <Form.Control
-                    type='number'
-                    name='phone'
-                    value={dataForm.phone}
-                    onChange={handleChange}
-                    placeholder='Enter your phone number'
-                />
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                    type='text'
-                    name='email'
-                    placeholder='Email'
-                    value={email1}
-                    onChange={handleEmail1Change}
-                    required
-                />
-                <Form.Control
-                    type='text'
-                    name='confirmEmail'
-                    placeholder='Confirm your email'
-                    value={email2}
-                    onChange={handleEmail2Change}
-                    required
-                />
-            </Form.Group>
+        <>
+            <Form onSubmit={createOrder}>
+                <Form.Group className='mb-3' controlId='formPeople'>
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control
+                        type='text'
+                        name='name'
+                        value={dataForm.name}
+                        onChange={handleChange}
+                        placeholder='Enter your name'
+                    />
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                        type='text'
+                        name='lastName'
+                        value={dataForm.lastName}
+                        onChange={handleChange}
+                        placeholder='Enter your Last Name'
+                    />
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                        type='number'
+                        name='phone'
+                        value={dataForm.phone}
+                        onChange={handleChange}
+                        placeholder='Enter your phone number'
+                    />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        type='text'
+                        name='email'
+                        placeholder='Email'
+                        value={email1}
+                        onChange={handleEmail1Change}
+                        required
+                    />
+                    <Form.Control
+                        type='text'
+                        name='confirmEmail'
+                        placeholder='Confirm your email'
+                        value={email2}
+                        onChange={handleEmail2Change}
+                        required
+                    />
+                </Form.Group>
 
-            <center>
-                <Button variant="dark" type="submit">
-                    Submit
-                </Button>
-            </center>
-        </Form>
+                <center>
+                    <Button variant="dark" type="submit">
+                        Submit
+                    </Button>
+                </center>
+
+            </Form>
+        </>
     )
 }
 

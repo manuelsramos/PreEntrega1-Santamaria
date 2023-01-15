@@ -1,0 +1,15 @@
+.divempty,
+.emptytext {
+    text-align: center;
+    margin: 50px;
+}
+
+.emptybutton {
+    margin: 40px;
+    width: 400px;
+}
+
+.emptyicon {
+    font-size: 200px;
+
+}

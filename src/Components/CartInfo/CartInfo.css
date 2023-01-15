@@ -1,0 +1,22 @@
+.productInfo {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.totalPrice {
+    font-weight: bold;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divbtn {
+    margin: 50px 0px 30px 30px;
+    width: 200px;
+}
+
+.btn-trash {
+    font-size: 20px;
+}

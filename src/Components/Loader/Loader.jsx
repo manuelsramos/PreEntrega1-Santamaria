@@ -24,7 +24,7 @@ export const Loader = () => {
                     role="status"
                     aria-hidden="true"
                 />
-                Are you ready for this?  ...
+                Are you ready for this?
             </Button>
         </>
     )

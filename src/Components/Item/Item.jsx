@@ -11,9 +11,7 @@ export const Item = ({ product }) => {
                 <Card.Img variant="top" src={product.photo} />
                 <Card.Body className='card-img'>
                     <Card.Title className="card-title">{product.name}</Card.Title>
-                    <Card.Text className="card-category">
-                        {product.category}
-                    </Card.Text>
+
                 </Card.Body>
             </Link>
         </Card>

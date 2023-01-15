@@ -19,7 +19,7 @@ export const NavComponent = () => {
             <div className='navlink-container'>
               <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/men">Men</NavLink>
               <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/category/women">Women</NavLink>
-              <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-inactive'} to="/contact">Contact</NavLink>
+
             </div>
           </Nav>
           <Nav className='container'>
