@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { useCartContext } from '../../Context/Cartcontext'
+import './InputForm.css'
+
 
 const InputForm = ({ setOrderId }) => {
     const { cartList } = useCartContext();
@@ -57,7 +59,7 @@ const InputForm = ({ setOrderId }) => {
     };
 
     return (
-        <>
+        <div className='orderForm'>
             <Form onSubmit={createOrder}>
                 <Form.Group className='mb-3' controlId='formPeople'>
                     <Form.Label>Name</Form.Label>
@@ -110,7 +112,7 @@ const InputForm = ({ setOrderId }) => {
                 </center>
 
             </Form>
-        </>
+        </div>
     )
 }
 

@@ -11,27 +11,34 @@ const CartInfo = () => {
     return (
         <>
             {cartList.map((product => (
-                <div key={product.id}>
-                    <li >
-                        <img src={product.photo} alt="" className="w-25" />
-                        <label className='productInfo'>{product.name} - Amount: {product.cantidad}</label>
-                        <button
-                            className="btn btn-dark"
-                            onClick={() => deleteItem(product.id)}
-                        >
-                            <BiTrash />
-                        </button>
-                    </li>
-                </div>)))}
+                <div className="cartList-product">
+                    <div key={product.id}>
+                        <li>
+                            <img src={product.photo} alt="" className="w-25" />
+                            <label className='productInfo'>{product.name} - </label><label className="amountProduct">Amount: {product.cantidad}  </label>
 
-            <h1 className='totalPrice'>Total Price: {finalPrice()}</h1>
+                            <button
+                                className="btn btn-dark"
+                                onClick={() => deleteItem(product.id)}
+                            >
+                                <BiTrash />
+                            </button>
+                        </li>
+
+                    </div>
+                </div >)))
+            }
+
+            <h1 className='totalPrice'>Total: {finalPrice()},00</h1>
             <br></br>
-            <button
-                className="btn btn-dark"
-                onClick={deleteCart}
-            >
-                Delete Cart
-            </button>
+            <div className="delete-button">
+                <button
+                    className="btn btn-dark"
+                    onClick={deleteCart}
+                >
+                    Delete Cart
+                </button>
+            </div>
 
 
 

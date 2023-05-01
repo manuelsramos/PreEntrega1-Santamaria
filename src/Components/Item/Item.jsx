@@ -6,11 +6,11 @@ import './Item.css'
 
 export const Item = ({ product }) => {
     return (
-        <Card style={{ width: '18rem', margin: '1rem' }}>
-            <Link to={`/detail/${product.id}`}>
+        <Card style={{ width: '18rem', margin: '1rem', border: 'solid 1px #8C8B8B' }}>
+            <Link style={{ textDecoration: 'none' }} to={`/detail/${product.id}`}>
                 <Card.Img variant="top" src={product.photo} />
-                <Card.Body className='card-img'>
-                    <Card.Title className="card-title">{product.name}</Card.Title>
+                <Card.Body style={{ border: 'solid 2px #E4E4E4', padding: '10px', margin: '1px 1px 10px', backgroundColor: '#E4E4E4' }} className='card-img'>
+                    <Card.Title>{product.name} </Card.Title>
 
                 </Card.Body>
             </Link>

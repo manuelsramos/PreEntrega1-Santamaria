@@ -5,6 +5,7 @@ import { useCartContext } from '../../Context/Cartcontext';
 import InterCart from '../InterCart/InterCart';
 import './ItemDetail.css'
 
+
 const ItemDetail = ({ product }) => {
 
     const [interButton, setInterButton] = useState(true)
@@ -20,24 +21,26 @@ const ItemDetail = ({ product }) => {
     return (
         <div className="divDetail">
             <div className='divItem'>
-                <h1 className='productTitle'>{product.name}</h1>
                 <img src={product.photo} className='w-50' alt="Product image" />
                 <div className='itemInfo'>
-                    <h4 className='descriptionDetail'>{product.description}</h4>
+                    <h3 className='productTitle'>{product.name}</h3>
+                    <h3 className='descriptionDetail'>{product.description}</h3>
 
-                    <h5 className='priceDetail'>Just in time! My price is: {product.price}</h5>
+                    <h4 className='priceDetail'>$: {product.price},00</h4>
 
                 </div>
             </div>
-            {interButton
-                ?
-                < ItemCount stock={5}
-                    initial={1}
-                    onAdd={onAdd} />
-                : <InterCart />
-            }
+            <div className="counterButton">
+                {interButton
+                    ?
+                    <ItemCount stock={5}
+                        initial={1}
+                        onAdd={onAdd} />
+                    : <InterCart />
+                }
+            </div>
 
-        </div>
+        </ div>
     )
 }
 

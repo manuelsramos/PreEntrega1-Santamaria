@@ -26,7 +26,7 @@ export const ItemListContainer = ({ greetings }) => {
         .finally(() => setLoading(false))
 
     } else {
-      const datab = getFirestore()
+      const datab = getFirestore();
       const queryCollection = collection(datab, 'productos')
 
       getDocs(queryCollection)
