@@ -15,7 +15,7 @@ const CartInfo = () => {
                     <div key={product.id}>
                         <li>
                             <img src={product.photo} alt="" className="w-25" />
-                            <label className='productInfo'>{product.name} - </label><label className="amountProduct">Amount: {product.cantidad}  </label>
+                            <label className='productInfo'>{product.name} - </label><label className="amountProduct">Amount: {product.cantidad} - $: {product.price} </label>
 
                             <button
                                 className="btn btn-dark"
