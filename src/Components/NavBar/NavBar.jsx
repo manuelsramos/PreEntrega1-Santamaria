@@ -26,7 +26,7 @@ export const NavComponent = () => {
             <NavLink className="item-count">
 
             </NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-active'} to="/cart"><CartWidget /></NavLink>
+            <NavLink style={{ marginLeft: 'auto' }} className={({ isActive }) => isActive ? 'navlink-active' : 'navlink-active'} to="/cart"><CartWidget /></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

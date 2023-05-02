@@ -5,28 +5,19 @@ import Spinner from 'react-bootstrap/Spinner';
 
 export const Loader = () => {
     return (
-        <>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px' }}>
             <Button variant="secondary" disabled>
                 <Spinner
                     as="span"
                     animation="border"
-                    size="sm"
+                    size="md"
                     role="status"
                     aria-hidden="true"
                 />
                 <span className="visually-hidden">Loading...</span>
             </Button>{' '}
-            <Button variant="dark" disabled>
-                <Spinner
-                    as="span"
-                    animation="grow"
-                    size="sm"
-                    role="status"
-                    aria-hidden="true"
-                />
-                Are you ready for this?
-            </Button>
-        </>
+
+        </div>
     )
 }
 

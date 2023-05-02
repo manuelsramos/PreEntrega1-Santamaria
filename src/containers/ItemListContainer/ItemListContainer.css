@@ -1,0 +1,11 @@
+.greetingsMessage {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 20px;
+    animation: backInDown;
+    animation-duration: 2s;
+    font-weight: 700;
+    box-sizing: border-box;
+}

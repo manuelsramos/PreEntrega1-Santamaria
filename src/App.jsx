@@ -7,7 +7,7 @@ import CartContainer from './containers/CartContainer/CartContainer'
 import { NoIdComponent } from './Components/NoIdComponent/NoIdComponent'
 import BuyOrder from './Components/BuyOrder/BuyOrder'
 
-const greetingsContainer = 'Welcome, just in time!'
+const greetingsContainer = 'Welcome to Watched Store'
 
 function App() {
 

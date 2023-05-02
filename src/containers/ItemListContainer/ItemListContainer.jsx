@@ -4,7 +4,9 @@ import ItemList from '../../Components/ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import { Loader } from '../../Components/Loader/Loader';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import './ItemListContainer.css'
+import 'animate.css';
 
 
 export const ItemListContainer = ({ greetings }) => {
@@ -41,7 +43,8 @@ export const ItemListContainer = ({ greetings }) => {
 
   return (
     <>
-      <h3 className='text-dark'>{greetings}</h3>
+
+      <h3 className='greetingsMessage' data-replace='Helloo!'><span>{greetings}</span></h3>
       {loading
         ? <Loader />
         : <Container>
