@@ -11,3 +11,21 @@
     width: 200px;
     height: 4em;
 }
+
+
+/* ------- SMALL DEVICES --------- */
+@media screen and (max-width: 560px) {
+    .divInterCart {
+        width: auto;
+        padding: 0;
+        display: flexbox;
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .cartbutton,
+    .keepbutton {
+        margin: 0.5rem;
+    }
+
+}

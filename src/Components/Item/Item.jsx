@@ -11,7 +11,7 @@ export const Item = ({ product }) => {
             <Link style={{ textDecoration: 'none' }} to={`/detail/${product.id}`}>
                 <Card.Img variant="top" src={product.photo} />
                 <Card.Body style={{ border: 'solid 2px #E4E4E4', padding: '10px 0px', margin: '1px 0px 10px', backgroundColor: '#FFFFFF' }} className='card-img'>
-                    <Card.Title style={{}}>{product.name}<br />$: {product.price},00 </Card.Title>
+                    <Card.Title>{product.name}<br /><span className="itemPrice">$: {product.price},00 </span></Card.Title>
 
                 </Card.Body>
             </Link>

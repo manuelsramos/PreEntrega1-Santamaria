@@ -6,10 +6,22 @@
 
 .emptybutton {
     margin: 40px;
-    width: 400px;
+    width: 25em;
 }
 
 .emptyicon {
     font-size: 200px;
 
+}
+
+/* ------- SMALL DEVICES --------- */
+@media screen and (max-width: 480px) {
+    .emptybutton {
+        margin: 2rem auto auto;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        width: 15rem;
+
+    }
 }

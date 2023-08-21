@@ -29,7 +29,7 @@ export const ItemCount = ({ stock = 5, initial = 1, onAdd }) => {
                 <Button onClick={handleCount} variant="secondary">+</Button>
                 <br></br>
                 <br></br>
-                <Button className='counterButton' onClick={handleOnAdd} variant="dark"><h3>Add to the Cart</h3></Button>
+                <Button className='counterButton' onClick={handleOnAdd} variant="dark"><h2 style={{ fontSize: '25px' }}>Add to the Cart</h2></Button>
             </center>
         </>
     )

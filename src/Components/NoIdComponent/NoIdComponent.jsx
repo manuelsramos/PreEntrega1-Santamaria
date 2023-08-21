@@ -10,7 +10,7 @@ export const NoIdComponent = () => {
                 'danger'
             ].map((variant) => (
                 <Alert key={variant} variant={variant}>
-                    Error! The id you provide, don't exist!
+                    ERROR! The id you provide, don't exist!
                 </Alert>
             ))}
         </>

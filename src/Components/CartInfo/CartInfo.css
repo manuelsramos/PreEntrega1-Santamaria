@@ -49,3 +49,35 @@ li {
     justify-content: center;
     align-items: center;
 }
+
+
+/* -------- MEDIUM DEVICES ---------- */
+
+@media screen and (max-width:900px) {
+    .cartList-product {
+        margin: 3rem auto;
+        width: 90%;
+    }
+
+    .productInfo {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ----------- SMALL DEVICES ----------- */
+@media screen and (max-width: 546px) {
+    .cartList-product {
+        margin: 0.9rem auto;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .productInfo,
+    .amountProduct {
+        font-size: 0.9rem;
+    }
+
+}

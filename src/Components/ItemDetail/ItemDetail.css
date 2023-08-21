@@ -58,3 +58,14 @@
 .counterButton {
     margin: 1px auto;
 }
+
+
+/* ------- SMALL DEVICES --------- */
+@media screen and (max-width: 560px) and (min-width: 280px) {
+    .itemInfo {
+        margin: auto;
+        padding: auto;
+        justify-content: center;
+        align-items: center;
+    }
+}

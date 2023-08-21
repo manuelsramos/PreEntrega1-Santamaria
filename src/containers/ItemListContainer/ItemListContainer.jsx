@@ -44,12 +44,12 @@ export const ItemListContainer = ({ greetings }) => {
   return (
     <>
 
-      <h3 className='greetingsMessage' data-replace='Helloo!'><span>{greetings}</span></h3>
+      <h2 className='greetingsMessage'>{greetings}</h2>
       {loading
         ? <Loader />
         : <Container>
-          <Row>
-            < ItemList products={products} />
+          <Row className='item-home'>
+            <ItemList products={products} />
           </Row>
         </Container>
       }

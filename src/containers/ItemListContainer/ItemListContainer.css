@@ -1,11 +1,41 @@
 .greetingsMessage {
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 20px;
     animation: backInDown;
     animation-duration: 2s;
     font-weight: 700;
-    box-sizing: border-box;
+    font-size: 3rem;
+}
+
+/* -------- MEDIUM DEVICES ---------- */
+
+@media screen and (max-width:900px) {
+    .greetingsMessage {
+        display: flex;
+        margin: 3rem auto;
+        padding: auto;
+        text-align: center;
+    }
+
+    .item-home {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* -------- SMALL DEVICES ---------- */
+
+@media screen and (max-width:560px) {
+    .greetingsMessage {
+        margin: auto;
+        text-align: center;
+    }
+
+    .item-home {
+        display: flex;
+        justify-content: center;
+    }
 }

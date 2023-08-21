@@ -14,3 +14,8 @@
     text-decoration: none;
     color: black;
 }
+
+.itemPrice {
+    font-style: oblique;
+    color: #797979;
+}

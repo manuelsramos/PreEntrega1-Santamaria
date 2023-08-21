@@ -4,3 +4,23 @@
     border-radius: 20px;
     padding: 30px;
 }
+
+
+/* --------- MEDIUM DEVICES ------------ */
+@media screen and (max-width: 900px) {
+    .orderForm {
+        margin: 2rem;
+        padding: auto;
+
+    }
+}
+
+
+/* --------- Small Devices ------------ */
+@media screen and (max-width: 546px) {
+    .orderForm {
+        margin: 1rem;
+        padding: auto;
+
+    }
+}
