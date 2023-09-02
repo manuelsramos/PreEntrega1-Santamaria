@@ -15,7 +15,7 @@ const BuyOrder = ({ id }) => {
             {[
                 'secondary'
             ].map((variant) => (
-                <div className='buyorderdiv'><Alert key={variant} variant={variant}>
+                <div key={id} className='buyorderdiv'><Alert key={variant} variant={variant}>
                     Your order
                     <br></br>
                     #{id}
