@@ -11,7 +11,7 @@ const CartInfo = () => {
     return (
         <>
             {cartList.map((product => (
-                <div className="cartList-product">
+                <div key={product.id} className="cartList-product">
                     <div key={product.id}>
                         <li>
                             <img src={product.photo} alt="" className="w-25" />
